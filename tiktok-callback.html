@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><title>TikTok Login Complete</title></head>
+<body style="font-family:sans-serif;max-width:600px;margin:80px auto;text-align:center">
+<h1>✅ TikTok authorization complete</h1>
+<p>Copy this code and paste it into the terminal:</p>
+<pre id="code" style="font-size:1.3em;background:#eee;padding:16px;border-radius:8px;word-break:break-all"></pre>
+<button onclick="navigator.clipboard.writeText(document.getElementById('code').textContent)" style="font-size:1.1em;padding:10px 24px">Copy code</button>
+<script>
+const p = new URLSearchParams(location.search);
+document.getElementById('code').textContent = p.get('code') || ('ERROR: ' + (p.get('error_description') || p.get('error') || 'no code returned'));
+</script>
+</body></html>
